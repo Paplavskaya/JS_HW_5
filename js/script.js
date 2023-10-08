@@ -16,3 +16,22 @@ let getResult1 = function(number){
 console.log(getResult1(5));
 
 
+/*Напишите функции min и max, которые возвращают меньшее и большее из
+чисел a и b*/
+
+let min = function(a, b) {
+    if (a < b) {
+      return a;
+    } else {
+      return b;
+    }
+}
+
+let max = function(a, b) {
+    return a > b ? a : b;
+}
+
+console.log(`Меньшее число: ${min(25, 105)}
+Большее число: ${max (25, 105)}`)
+
+
