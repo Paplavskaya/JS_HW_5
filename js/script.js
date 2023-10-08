@@ -57,3 +57,20 @@ let outputArr = () => getArr();
 console.log(outputArr());
 
 
+/*Сделайте функцию isEven() (even - это четный), которая параметром 
+принимает целое число и проверяет: четное оно или нет. Если четное - пусть 
+функция возвращает true, если нечетное — false.*/
+
+let isEven = function(number){    
+    if(number % 1 !== 0) {
+        return console.log ('Не целое число')
+    }
+
+    if(number % 2 === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(isEven(4));
