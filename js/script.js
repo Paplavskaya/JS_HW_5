@@ -111,3 +111,58 @@ let newArr = arr.filter(function(item){
 console.log(newArr);
 
 
+/*Напишите ф-цию, которая рисует равнобедренный треугольник из звездочек:
+Кол-во рядов должно вводиться с клавиатуры. Доп., напишите такую же ф-цию, но которая выведет перевернутый треугольник.*/
+
+let isoscelesTriangle = function(){
+    const h = +prompt('введите число');
+    let space = '';
+    let star = '';
+    let triangle = '';
+    
+    for(let i = 1; i <= h; i++){
+        for(let j = 1; j <= h - i; j++){
+            space += ' ';
+        }
+    
+        for(let k = 1; k <= i*2-1; k++){
+            star += '*';
+        }
+
+        let triangle = space + star;
+        console.log(triangle);
+        space = '';
+        star = '';
+    }
+
+    return triangle;
+}
+
+console.log(isoscelesTriangle());
+
+
+let invertedTriangle = function(){
+    const h = +prompt('введите число');
+    let space = '';
+    let star = '';
+    let triangle = '';
+    
+    for(let i = h; i >= 1; i--){
+        for(let j = 1; j <= h - i; j++){
+            space += ' ';
+        }
+    
+        for(let k = 1; k <= i*2-1; k++){
+            star += '*';
+        }
+
+        let triangle = space + star;
+        console.log(triangle);
+        space = '';
+        star = '';
+    }
+
+    return triangle;
+}
+
+console.log(invertedTriangle());
