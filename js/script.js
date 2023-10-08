@@ -39,22 +39,24 @@ console.log(`Меньшее число: ${min(25, 105)}
 числовыми значениями, диапазон которых должен вводиться пользователем 
 с клавиатуры; вторая – выводить полученный массив.*/
 
-let getArr = function(){
-    let arr = [];
-    for(;;){
-        let number = prompt('введите число');
-    
-        if(isNaN(number) || number === null || number === ' '){
-            break;
-        }
-
-        arr.push(+number);
-    };
-    return arr;    
+const getArray = function() {
+    const lengthArrStart = +prompt('Введите начало диапазона');
+    const lengthArrEnd = +prompt('Введите конец диапазона');
+    const arr = [];
+    for(let i = lengthArrStart; i <= lengthArrEnd; i++){
+      arr.push(i);
+    }
+  
+    return arr;  
 }
 
-let outputArr = () => getArr();
-console.log(outputArr());
+const array  =  getArray();
+  
+const print = function (arrayForPrint) {
+    console.log(arrayForPrint)
+}
+  
+print(array)
 
 
 /*Сделайте функцию isEven() (even - это четный), которая параметром 
@@ -74,3 +76,38 @@ let isEven = function(number){
 }
 
 console.log(isEven(4));
+
+
+/*Напишите ф-цию, в которую передается массив с целыми числами. 
+Верните новый массив, где останутся лежать только четные из этих чисел. 
+Для этого используйте вспомогательную функцию isEven из предыдущей 
+задачи*/
+
+let integerArr = function(){
+    let arr = [];
+    for(;;){
+        let number = prompt('введите целое число');
+    
+        if(number % 1 !== 0) {
+            continue;
+        } else if(isNaN(number) || number === null || number === ' '){
+            break;
+        }
+
+        arr.push(+number);
+    };
+
+    return arr;  
+}
+
+let arr = integerArr();
+
+let newArr = arr.filter(function(item){    
+    if (isEven(item) === true) {
+        return item;
+    }
+});
+
+console.log(newArr);
+
+
