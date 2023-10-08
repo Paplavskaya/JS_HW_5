@@ -35,3 +35,25 @@ console.log(`Меньшее число: ${min(25, 105)}
 Большее число: ${max (25, 105)}`)
 
 
+/*Напишите две функции: первая ф-ция должна возвращать массив с 
+числовыми значениями, диапазон которых должен вводиться пользователем 
+с клавиатуры; вторая – выводить полученный массив.*/
+
+let getArr = function(){
+    let arr = [];
+    for(;;){
+        let number = prompt('введите число');
+    
+        if(isNaN(number) || number === null || number === ' '){
+            break;
+        }
+
+        arr.push(+number);
+    };
+    return arr;    
+}
+
+let outputArr = () => getArr();
+console.log(outputArr());
+
+
