@@ -166,3 +166,26 @@ let invertedTriangle = function(){
 }
 
 console.log(invertedTriangle());
+
+
+/*Дано число. Сложите его цифры. Если сумма получилась более 9-ти, 
+опять сложите его цифры. И так, пока сумма не станет однозначным числом 
+(9 и менее). Исп. Рекурсию.*/
+
+const getSum = function(num){
+    const numberArr = Array.from(String(num), Number);
+    let sum = 0;
+    for(i = 0; i < numberArr.length; i++){
+        sum = sum + numberArr[i];
+    }
+
+    if(sum > 9){
+        return getSum(sum);
+    } else {
+        return sum;
+    }
+    
+}
+
+console.log(getSum(2534));
+
